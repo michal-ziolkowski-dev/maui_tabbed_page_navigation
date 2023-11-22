@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+        <!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+        <OutputType>Exe</OutputType>
+        <RootNamespace>MauiNet8</RootNamespace>
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+
+        <!-- Display name -->
+        <ApplicationTitle>MauiNet8</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.mauinet8</ApplicationId>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+        <MauiVer>8.0.0-rc.2.9373</MauiVer>
+        <LangVersion>10</LangVersion>
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4"/>
+
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128"/>
+
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*"/>
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208"/>
+
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*"/>
+
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9373"/>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9373"/>
+        <PackageReference Include="CommunityToolkit.Maui"  Version="6.1.0"/>
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility"  Version="8.0.0-rc.2.9373"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug"/>
+        <PackageReference Include="Prism.Maui" Version="9.0.271-pre"/>
+        <PackageReference Include="Prism.Core" Version="9.0.271-pre"/>
+        <PackageReference Include="Prism.DryIoc.Maui" Version="9.0.271-pre"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="Pages\MainPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Pages\TabbedPage\HomeDashboardTabePage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Pages\TabbedPage\SettingsTabPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Pages\TabbedPage\DetailPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\MainPage.xaml.cs">
+        <DependentUpon>MainPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\TabbedPage\HomeDashboardTabePage.xaml.cs">
+        <DependentUpon>TestPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\TabbedPage\SettingsTabPage.xaml.cs">
+        <DependentUpon>SettingsPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\TabbedPage\DetailPage.xaml.cs">
+        <DependentUpon>TestPageA.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+</Project>
