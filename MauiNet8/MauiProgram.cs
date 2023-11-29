@@ -8,6 +8,7 @@ using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 using Prism;
 using Prism.Ioc;
+using Prism.Mvvm;
 using Prism.Navigation;
 
 namespace MauiNet8;
@@ -35,6 +36,12 @@ public static class MauiProgram
                     services.RegisterForNavigation<HomeDashboardTabePage, HomeDashboardTabeViewModel>();
                     services.RegisterForNavigation<SettingsTabPage, SettingsTabePageViewModel>();
                     services.RegisterForNavigation<DetailPage, DetailPageViewModel>();
+                    
+                    ViewModelLocationProvider.Register<MainPage, MainPageViewModel>();
+                    ViewModelLocationProvider.Register<TaabbedPage, TaabbedPageViewModel>();
+                    ViewModelLocationProvider.Register<HomeDashboardTabePage, HomeDashboardTabeViewModel>();
+                    ViewModelLocationProvider.Register<SettingsTabPage, SettingsTabePageViewModel>();
+                    ViewModelLocationProvider.Register<DetailPage, DetailPageViewModel>();
                 })
                 .OnAppStart(async (container, navigationService) => {
                     await navigationService.NavigateAsync("/NavigationPage/MainPage");

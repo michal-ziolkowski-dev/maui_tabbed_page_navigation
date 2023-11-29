@@ -18,7 +18,7 @@
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
-        <MauiVer>8.0.0-rc.2.9373</MauiVer>
+        <MauiVer>8.0.3</MauiVer>
         <LangVersion>10</LangVersion>
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     </PropertyGroup>
@@ -42,10 +42,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9373"/>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9373"/>
         <PackageReference Include="CommunityToolkit.Maui"  Version="6.1.0"/>
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility"  Version="8.0.0-rc.2.9373"/>
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility"  Version="8.0.3"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug"/>
         <PackageReference Include="Prism.Maui" Version="9.0.271-pre"/>
         <PackageReference Include="Prism.Core" Version="9.0.271-pre"/>
